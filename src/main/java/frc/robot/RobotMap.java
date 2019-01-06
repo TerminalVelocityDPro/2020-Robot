@@ -29,5 +29,11 @@ public class RobotMap {
   public static int frontRightDrive;
   public static int backRightDrive;
   public static int elevator;
+
+  public static int elevatorLimit;
+
   
+  
+
+
 }

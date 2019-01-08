@@ -25,12 +25,19 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   public static int frontLeftDrive;
+  public static int frontLeftAngle;
   public static int backLeftDrive;
+  public static int backLeftAngle;
   public static int frontRightDrive;
+  public static int frontRightAngle;
   public static int backRightDrive;
+  public static int backRightAngle;
+  
   public static int elevator;
 
   public static int elevatorLimit;
+
+  
 
   
   

@@ -8,7 +8,10 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 /**
@@ -16,14 +19,26 @@ import frc.robot.commands.TankDrive;
  */
 public class DriveTrain extends Subsystem {
 
+  
+
 
   Spark frontLeftDrive = new Spark(RobotMap.frontLeftDrive);
+  //Spark frontLeftAngle = new Spark(RobotMap.frontLeftAngle);
   Spark backLeftDrive = new Spark(RobotMap.backLeftDrive);
+  //Spark backLeftAngle = new Spark(RobotMap.backLeftAngle);
   Spark frontRightDrive = new Spark(RobotMap.frontRightDrive);
+  //Spark frontRightAngle = new Spark(RobotMap.frontRightAngle);
   Spark backRightDrive = new Spark(RobotMap.backRightDrive);
+
+  //Encoder frontLeft = new Encoder(0, 1, false, EncodingType.k4X);
+
+  //PIDController frontLeft = new PIDController(1, 0, 0, new AnalogInput(Encoder), frontLeftAngle);
 
   double lastRight = 0;
   double lastLeft = 0;
+
+  public final double L = 1;
+  public final double W = 1;
 
   
   // Put methods for controlling this subsystem
@@ -32,6 +47,28 @@ public class DriveTrain extends Subsystem {
 
 
   public static DriveTrain instance = new DriveTrain();
+
+  // public void swerveDrive(double x1, double y1, double x2){
+  //   double r = Math.sqrt((L*L) + (W*W));
+  //   y1 *= -1;
+
+  //   double a = x1 - x2 * (L/r);
+  //   double b = x1 + x2 * (L/r);
+  //   double c = y1 - x2 * (W/r);
+  //   double d = y1 + x2 * (W/r);
+
+  //   double backRightSpeed = Math.sqrt((a*a) + (d*d));
+  //   double backLeftSpeed = Math.sqrt((a*a) + (c*c));
+  //   double frontRightSpeed = Math.sqrt((b*b) + (d*d));
+  //   double frontLeftSpeed = Math.sqrt((b*b) + (c*c));
+
+  //   double backRightAngle = Math.atan2(a,d) / Math.PI;
+  //   double backLeftAngle = Math.atan2(a, c) / Math.PI;
+  //   double frontRightAngle = Math.atan2(b, d) / Math.PI;
+  //   double frontLeftAngle = Math.atan2(b,c) / Math.PI;
+    
+
+  // }
 
   public void drive(double leftSpeed, double rightSpeed){
     frontLeftDrive.set(leftSpeed);

@@ -70,6 +70,38 @@ public class DriveTrain extends Subsystem {
 
   // }
 
+  public double getFrontLeft(){
+    return frontLeftDrive.get();
+  }
+
+  public double getFrontRight(){
+    return frontRightDrive.get();
+  }
+
+  public double getBackLeft(){
+    return backLeftDrive.get();
+  }
+
+  public double getBackRight(){
+    return backRightDrive.get();
+  }
+
+  public void setFrontLeft(double setNum){
+    frontLeftDrive.set(setNum);
+  }
+
+  public void setFrontRight(double setNum){
+    frontRightDrive.set(setNum);
+  }
+
+  public void setBackLeft(double setNum){
+    backLeftDrive.set(setNum);
+  }
+
+  public void setBackRight(double setNum){
+    backRightDrive.set(setNum);
+  }
+
   public void drive(double leftSpeed, double rightSpeed){
     frontLeftDrive.set(leftSpeed);
     backLeftDrive.set(leftSpeed);

@@ -16,6 +16,7 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.OI;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,6 +32,8 @@ public class Robot extends TimedRobot {
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
   Command teleopDrive;
+  Command play;
+  Command record;
   DriveTrain driveTrain;
 
   /**
@@ -44,6 +47,8 @@ public class Robot extends TimedRobot {
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     teleopDrive = new TankDrive();
+    m_autonomousCommand = new OIPlay();
+    record = new OIRecord();
     driveTrain = DriveTrain.getInstance();
     
   }
@@ -100,6 +105,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.start();
     }
+
+    
   }
 
   /**
@@ -120,6 +127,10 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
     teleopDrive.start();
+    record.start();
+
+    
+
   }
 
   /**
@@ -128,6 +139,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    
   }
 
   /**

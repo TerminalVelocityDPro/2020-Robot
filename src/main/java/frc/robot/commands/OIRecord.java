@@ -7,17 +7,13 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
-import frc.robot.subsystems.DriveTrain;
 
-public class TankDrive extends Command {
+import edu.wpi.first.wpilibj.command.Command;
 
-  DriveTrain driveTrain;
-  public TankDrive() {
-
-    driveTrain = DriveTrain.getInstance();
-    requires(driveTrain);
+public class OIRecord extends Command {
+  BTMacroRecord recorder = null;
+  public OIRecord() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -25,15 +21,32 @@ public class TankDrive extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    
+    try{
+      recorder = new BTMacroRecord();
+    }catch(IOException e){
+      e.printStackTrace();
+    }
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftSpeed = Math.pow(OI.leftJoystick.getY(), 3);
-    double rightSpeed = Math.pow(OI.rightJoystick.getY(), 3);
+    if(isOperatorControl()){
+      if(OI.leftButton6.whenPressed()){
+        try{
+          if(recorder != null){
+            recorder.record();
+          }
+          catch(IOException e){
+            e.printStackTrace();
+          }
+        }
+      }
 
-    driveTrain.drive(leftSpeed, rightSpeed);
+    }
+
+
     
   }
 
@@ -46,7 +59,14 @@ public class TankDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    driveTrain.stop();
+    try{
+      if(recorder != null){
+        recorder.end();
+      }
+      catch(IOException e){
+        e.printStackTrace();
+      }
+    }
   }
 
   // Called when another command which requires one or more of the same

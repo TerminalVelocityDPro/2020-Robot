@@ -25,7 +25,6 @@ public class BTMacroRecord{
     public void record() throws IOException{
         if(writer != null){
             writer.append("" + (System.currentTimeMillis()-startTime));
-
             writer.append("," + driveTrain.getBackLeft());
             writer.append("," + driveTrain.getFrontRight());
             writer.append("," + driveTrain.getBackLeft());

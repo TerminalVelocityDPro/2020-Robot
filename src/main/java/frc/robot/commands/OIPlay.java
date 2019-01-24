@@ -8,16 +8,10 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
-import frc.robot.subsystems.DriveTrain;
 
-public class TankDrive extends Command {
-
-  DriveTrain driveTrain;
-  public TankDrive() {
-
-    driveTrain = DriveTrain.getInstance();
-    requires(driveTrain);
+public class OIPlay extends Command {
+  BTMacroPlay player = null;
+  public OIPlay() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -25,16 +19,25 @@ public class TankDrive extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    
+    try {
+      player = new BTMacroPlay();
+      
+    } catch (FileNotException e) {
+      //TODO: handle exception
+      e.printStackTrace();
+    }
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftSpeed = Math.pow(OI.leftJoystick.getY(), 3);
-    double rightSpeed = Math.pow(OI.rightJoystick.getY(), 3);
-
-    driveTrain.drive(leftSpeed, rightSpeed);
-    
+    while(isAutonomous()){
+      if(player != null){
+        player.play();
+      }
+    }
+   
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -46,7 +49,9 @@ public class TankDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    driveTrain.stop();
+    if(player != null){
+      player.end();
+    }
   }
 
   // Called when another command which requires one or more of the same

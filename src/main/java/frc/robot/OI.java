@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.OI;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -60,7 +61,17 @@ public class OI {
   
   public static XboxController xbox = new XboxController(2);
 
+  
+
   static{
+    OI.xbox.rt.whenPressed(); //Hatchpanel
+    OI.xbox.lt.whenPressed(); //Cargo
+    OI.xbox.a.whenPressed(); //Carraige
+    
+    
+
+    
+    
   
   }
 }

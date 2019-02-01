@@ -40,6 +40,11 @@ public class Robot extends TimedRobot {
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
    */
+
+   //Lift - 2 CIM Motors, PID Loops
+   //Hatchpanel - 1 CIM Motors, Rotate Back and Forth, Limit Switches, Encoders
+   //Cargo - 2 Bag Motors, Encoders, Limit Switches
+   //Saadi vs. LIMELIGHT
   @Override
   public void robotInit() {
     m_oi = new OI();

@@ -36,6 +36,12 @@ public class Robot extends TimedRobot {
   Command record;
   DriveTrain driveTrain;
 
+  NetworkTable table;
+
+  public Robot(){
+    table= NetworkTable.getTable("GRIP/myContoursReport")
+  }
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -47,6 +53,20 @@ public class Robot extends TimedRobot {
    //Saadi vs. LIMELIGHT
   @Override
   public void robotInit() {
+    double [] defaultValue = new double[0];
+    while (true){
+      double[] areas = table.getNumberArray("area", defaultValue);
+      System.out.print("areas: ");
+
+      for(double area : areas){
+        System.out.print(area + " ");
+
+      }
+      System.out.println();
+      Timer.delay(1);
+    }
+
+
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());

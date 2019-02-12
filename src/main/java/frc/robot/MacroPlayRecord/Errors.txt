@@ -1,0 +1,399 @@
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIPlay.java:13: error: cannot find symbol  BTMacroPlay player = null;
+  ^
+  symbol:   class BTMacroPlay
+  location: class OIPlay
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIRecord.java:15: error: cannot find symbol
+  BTMacroRecord recorder = null;
+  ^
+  symbol:   class BTMacroRecord
+  location: class OIRecord
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:15: error: cannot find symbol
+    Cargo cargo = Cargo.getInstance();
+    ^
+  symbol:   class Cargo
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:16: error: cannot find symbol
+    PIDController pidController;
+    ^
+  symbol:   class PIDController
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:15: error: cannot find symbol
+    Hatchpanel hatchpanel = Hatchpanel.getInstance();
+    ^
+  symbol:   class Hatchpanel
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:16: error: cannot find symbol
+    PIDController pidController;
+    ^
+  symbol:   class PIDController
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\LiftPID.java:22: error: cannot find symbol
+    Lift lift = Lift.getInstance();
+    ^
+  symbol:   class Lift
+  location: class LiftPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Cargo.java:22: error: cannot find symbol
+  Spark cargoMotor = new Spark(RobotMap.cargoMotor);
+  ^
+  symbol:   class Spark
+  location: class Cargo
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Hatchpanel.java:25: error: cannot find
+symbol
+  Spark hatchPanelMotor = new Spark(RobotMap.hatchPanelMotor);
+  ^
+  symbol:   class Spark
+  location: class Hatchpanel
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Lift.java:23: error: cannot find symbol  Spark verticalLift = new Spark(RobotMap.verticalLift);
+  ^
+  symbol:   class Spark
+  location: class Lift
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Lift.java:24: error: cannot find symbol  Spark flip = new Spark(RobotMap.flip);
+  ^
+  symbol:   class Spark
+  location: class Lift
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIPlay.java:24: error: cannot find symbol      player = new BTMacroPlay();
+                   ^
+  symbol:   class BTMacroPlay
+  location: class OIPlay
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIPlay.java:26: error: cannot find symbol    } catch (FileNotException e) {
+             ^
+  symbol:   class FileNotException
+  location: class OIPlay
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIPlay.java:35: error: cannot find symbol    while(isAutonomous()){
+          ^
+  symbol:   method isAutonomous()
+  location: class OIPlay
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIRecord.java:26: error: cannot find symbol
+      recorder = new BTMacroRecord();
+                     ^
+  symbol:   class BTMacroRecord
+  location: class OIRecord
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIRecord.java:27: error: cannot find symbol
+    }catch(IOException e){
+           ^
+  symbol:   class IOException
+  location: class OIRecord
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIRecord.java:35: error: cannot find symbol
+    if(isOperatorControl()){
+       ^
+  symbol:   method isOperatorControl()
+  location: class OIRecord
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIRecord.java:36: error: method whenPressed in class Button cannot be applied to given types;
+      if(OI.leftButton6.whenPressed()){
+                       ^
+  required: Command
+  found: no arguments
+  reason: actual and formal argument lists differ in length
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIRecord.java:42: error: cannot find symbol
+        catch(IOException e){
+              ^
+  symbol:   class IOException
+  location: class OIRecord
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\commands\OIRecord.java:67: error: cannot find symbol
+      catch(IOException e){
+            ^
+  symbol:   class IOException
+  location: class OIRecord
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\MacroPlayRecord\BTMain.java:29: error: cannot find symbol
+        while(isAutonomous()){
+              ^
+  symbol:   method isAutonomous()
+  location: class BTMain
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\MacroPlayRecord\BTMain.java:35: error: cannot find symbol
+            player.end();
+                  ^
+  symbol:   method end()
+  location: variable player of type BTMacroPlay
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\OI.java:67: error: cannot find symbol
+    OI.xbox.rt.whenPressed(); //Hatchpanel
+           ^
+  symbol:   variable rt
+  location: variable xbox of type XboxController
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\OI.java:68: error: cannot find symbol
+    OI.xbox.lt.whenPressed(); //Cargo
+           ^
+  symbol:   variable lt
+  location: variable xbox of type XboxController
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\OI.java:69: error: cannot find symbol
+    OI.xbox.a.whenPressed(); //Carraige
+           ^
+  symbol:   variable a
+  location: variable xbox of type XboxController
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:15: error: cannot find symbol
+    Cargo cargo = Cargo.getInstance();
+                  ^
+  symbol:   variable Cargo
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:24: error: cannot find symbol
+        PIDSource pidSource = new PIDSource(){
+        ^
+  symbol:   class PIDSource
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:24: error: cannot find symbol
+        PIDSource pidSource = new PIDSource(){
+                                  ^
+  symbol:   class PIDSource
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:26: error: cannot find symbol
+            public void setPIDSourceType(PIDSourceType pidSource){}
+                                         ^
+  symbol: class PIDSourceType
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:29: error: cannot find symbol
+            public PIDSourceType getPIDSourceType(){
+                   ^
+  symbol: class PIDSourceType
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:25: error: method does not override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:28: error: method does not override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:30: error: cannot find symbol
+                return PIDSourceType.kDisplacement();
+                       ^
+  symbol: variable PIDSourceType
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:33: error: method does not override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:39: error: cannot find symbol
+        PIDOutput pidOutput = new PIDOutput(){
+        ^
+  symbol:   class PIDOutput
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:39: error: cannot find symbol
+        PIDOutput pidOutput = new PIDOutput(){
+                                  ^
+  symbol:   class PIDOutput
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:40: error: method does not override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:46: error: cannot find symbol
+        final double kP = SmartDashboard.getNumber("Left P", RobotMap.defaultLeftP);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:46: error: cannot find symbol
+        final double kP = SmartDashboard.getNumber("Left P", RobotMap.defaultLeftP);
+                          ^
+  symbol:   variable SmartDashboard
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:47: error: cannot find symbol
+        final double kI = SmartDashboard.getNumber("Left I", RobotMap.defaultLeftI);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:47: error: cannot find symbol
+        final double kI = SmartDashboard.getNumber("Left I", RobotMap.defaultLeftI);
+                          ^
+  symbol:   variable SmartDashboard
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:48: error: cannot find symbol
+        final double kD = SmartDashboard.getNumber("Left D", RobotMap.defaultLeftD);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:48: error: cannot find symbol
+        final double kD = SmartDashboard.getNumber("Left D", RobotMap.defaultLeftD);
+                          ^
+  symbol:   variable SmartDashboard
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\CargoPID.java:50: error: cannot find symbol
+        pidController = new PIDController(kP, kI, kD, pidSource, pidOutput);
+                            ^
+  symbol:   class PIDController
+  location: class CargoPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:15: error: cannot find symbol
+    Hatchpanel hatchpanel = Hatchpanel.getInstance();
+                            ^
+  symbol:   variable Hatchpanel
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:24: error: cannot find symbol
+        PIDSource pidSource = new PIDSource(){
+        ^
+  symbol:   class PIDSource
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:24: error: cannot find symbol
+        PIDSource pidSource = new PIDSource(){
+                                  ^
+  symbol:   class PIDSource
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:26: error: cannot find symbol
+            public void setPIDSourceType(PIDSourceType pidSource){}
+                                         ^
+  symbol: class PIDSourceType
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:29: error: cannot find symbol
+            public PIDSourceType getPIDSourceType(){
+                   ^
+  symbol: class PIDSourceType
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:25: error: method does not
+override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:28: error: method does not
+override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:30: error: cannot find symbol
+                return PIDSourceType.kDisplacement();
+                       ^
+  symbol: variable PIDSourceType
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:33: error: method does not
+override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:39: error: cannot find symbol
+        PIDOutput pidOutput = new PIDOutput(){
+        ^
+  symbol:   class PIDOutput
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:39: error: cannot find symbol
+        PIDOutput pidOutput = new PIDOutput(){
+                                  ^
+  symbol:   class PIDOutput
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:40: error: method does not
+override or implement a method from a supertype
+            @Override
+            ^
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:46: error: cannot find symbol
+        final double kP = SmartDashboard.getNumber("Left P", RobotMap.defaultLeftP);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:46: error: cannot find symbol
+        final double kP = SmartDashboard.getNumber("Left P", RobotMap.defaultLeftP);
+                          ^
+  symbol:   variable SmartDashboard
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:47: error: cannot find symbol
+        final double kI = SmartDashboard.getNumber("Left I", RobotMap.defaultLeftI);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:47: error: cannot find symbol
+        final double kI = SmartDashboard.getNumber("Left I", RobotMap.defaultLeftI);
+                          ^
+  symbol:   variable SmartDashboard
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:48: error: cannot find symbol
+        final double kD = SmartDashboard.getNumber("Left D", RobotMap.defaultLeftD);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:48: error: cannot find symbol
+        final double kD = SmartDashboard.getNumber("Left D", RobotMap.defaultLeftD);
+                          ^
+  symbol:   variable SmartDashboard
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\HatchpanelPID.java:50: error: cannot find symbol
+        pidController = new PIDController(kP, kI, kD, pidSource, pidOutput);
+                            ^
+  symbol:   class PIDController
+  location: class HatchpanelPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\LiftPID.java:22: error: cannot find symbol
+    Lift lift = Lift.getInstance();
+                ^
+  symbol:   variable Lift
+  location: class LiftPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\LiftPID.java:52: error: cannot find symbol
+        final double kP = SmartDashboard.getNumber("Left P", RobotMap.defaultLeftP);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class LiftPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\LiftPID.java:53: error: cannot find symbol
+        final double kI = SmartDashboard.getNumber("Left I", RobotMap.defaultLeftI);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class LiftPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\LiftPID.java:54: error: cannot find symbol
+        final double KD = SmartDashboard.getNumber("Left D", RobotMap.defaultLeftD);
+                                                             ^
+  symbol:   variable RobotMap
+  location: class LiftPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\PID\LiftPID.java:56: error: cannot find symbol
+        pidController = new PIDController(kP, kI, kD, pidSource, pidOutput);
+                                                  ^
+  symbol:   variable kD
+  location: class LiftPID
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\Robot.java:55: error: cannot find symbol
+    m_autonomousCommand = new OIPlay();
+                              ^
+  symbol:   class OIPlay
+  location: class Robot
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\Robot.java:56: error: cannot find symbol
+    record = new OIRecord();
+                 ^
+  symbol:   class OIRecord
+  location: class Robot
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Cargo.java:22: error: cannot find symbol
+  Spark cargoMotor = new Spark(RobotMap.cargoMotor);
+                         ^
+  symbol:   class Spark
+  location: class Cargo
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Cargo.java:22: error: cannot find symbol
+  Spark cargoMotor = new Spark(RobotMap.cargoMotor);
+                               ^
+  symbol:   variable RobotMap
+  location: class Cargo
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Cargo.java:25: error: cannot find symbol
+    return instance;
+           ^
+  symbol:   variable instance
+  location: class Cargo
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Hatchpanel.java:25: error: cannot find
+symbol
+  Spark hatchPanelMotor = new Spark(RobotMap.hatchPanelMotor);
+                              ^
+  symbol:   class Spark
+  location: class Hatchpanel
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Hatchpanel.java:28: error: cannot find
+symbol
+    return instance;
+           ^
+  symbol:   variable instance
+  location: class Hatchpanel
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Lift.java:23: error: cannot find symbol  Spark verticalLift = new Spark(RobotMap.verticalLift);
+                           ^
+  symbol:   class Spark
+  location: class Lift
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Lift.java:23: error: cannot find symbol  Spark verticalLift = new Spark(RobotMap.verticalLift);
+                                 ^
+  symbol:   variable RobotMap
+  location: class Lift
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Lift.java:24: error: cannot find symbol  Spark flip = new Spark(RobotMap.flip);
+                   ^
+  symbol:   class Spark
+  location: class Lift
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Lift.java:24: error: cannot find symbol  Spark flip = new Spark(RobotMap.flip);
+                         ^
+  symbol:   variable RobotMap
+  location: class Lift
+C:\Users\Drive Station 2\Documents\2020-Robot-dev\2020-Robot-dev\src\main\java\frc\robot\subsystems\Lift.java:27: error: cannot find symbol    return instance;
+           ^
+  symbol:   variable instance
+  location: class Lift
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+80 errors
+
+> Task :compileJava FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full
+insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 7s
+1 actionable task: 1 executed
+Compilation Error!
+GradleRIO detected this build failed due to a Compile Error (compileJava).
+Check that all your files are saved, then scroll up in this log for more information.
+The terminal process terminated with exit code: 1

@@ -9,6 +9,12 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDController;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+import frc.robot.RobotMap;
+import frc.robot.commands.TankDrive;
 
 /**
  * Add your docs here.
@@ -23,6 +29,8 @@ public class Hatchpanel extends Subsystem {
   //Encoders
 
   Spark hatchPanelMotor = new Spark(RobotMap.hatchPanelMotor);
+
+  public static Hatchpanel instance = new Hatchpanel();
 
   public static Hatchpanel getInstance(){
     return instance;

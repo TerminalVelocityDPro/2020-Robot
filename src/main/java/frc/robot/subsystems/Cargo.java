@@ -8,6 +8,12 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDController;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+import frc.robot.RobotMap;
+import frc.robot.commands.TankDrive;
 
 /**
  * Add your docs here.
@@ -20,6 +26,8 @@ public class Cargo extends Subsystem {
   //Limit Switches
 
   Spark cargoMotor = new Spark(RobotMap.cargoMotor);
+
+  public static Cargo instance = new Cargo();
 
   public static Cargo getInstance(){
     return instance;

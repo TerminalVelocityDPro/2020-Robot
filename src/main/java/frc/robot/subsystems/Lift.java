@@ -8,6 +8,12 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDController;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+import frc.robot.RobotMap;
+import frc.robot.commands.TankDrive;
 
 /**
  * Add your docs here.
@@ -22,6 +28,8 @@ public class Lift extends Subsystem {
 
   Spark verticalLift = new Spark(RobotMap.verticalLift);
   Spark flip = new Spark(RobotMap.flip);
+
+  public static Lift instance = new Lift();
 
   public static Lift getInstance(){
     return instance;

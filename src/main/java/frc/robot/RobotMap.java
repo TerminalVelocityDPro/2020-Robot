@@ -24,13 +24,13 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-  public static int frontLeftDrive;
+  public static int frontLeftDrive = 1;
   public static int frontLeftAngle;
-  public static int backLeftDrive;
+  public static int backLeftDrive = 2;
   public static int backLeftAngle;
-  public static int frontRightDrive;
+  public static int frontRightDrive = 3;
   public static int frontRightAngle;
-  public static int backRightDrive;
+  public static int backRightDrive = 4;
   public static int backRightAngle;
   
   public static int verticalLift;

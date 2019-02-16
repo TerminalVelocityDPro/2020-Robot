@@ -6,6 +6,11 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+import java.io.File;
+
+import java.io.FileNotFoundException;
+
+import java.util.Scanner;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
@@ -30,8 +35,9 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    //saadi - setting to get negative value for right joystick protects leftspeed value?? 
     double leftSpeed = Math.pow(OI.leftJoystick.getY(), 3);
-    double rightSpeed = Math.pow(OI.rightJoystick.getY(), 3);
+    double rightSpeed = Math.pow(-OI.rightJoystick.getY(), 3);
 
     driveTrain.drive(leftSpeed, rightSpeed);
     

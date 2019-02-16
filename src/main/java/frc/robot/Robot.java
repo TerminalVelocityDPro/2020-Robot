@@ -52,8 +52,8 @@ public class Robot extends TimedRobot {
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     teleopDrive = new TankDrive();
-    m_autonomousCommand = new OIPlay();
-    record = new OIRecord();
+    //m_autonomousCommand = new OIPlay();
+    //record = new OIRecord();
     driveTrain = DriveTrain.getInstance();
     
   }
@@ -132,7 +132,7 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
     teleopDrive.start();
-    record.start();
+    //record.start();
 
     
 

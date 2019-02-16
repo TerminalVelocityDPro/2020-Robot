@@ -63,15 +63,5 @@ public class OI {
 
   
 
-  static{
-    OI.xbox.rt.whenPressed(); //Hatchpanel
-    OI.xbox.lt.whenPressed(); //Cargo
-    OI.xbox.a.whenPressed(); //Carraige
-    
-    
-
-    
-    
   
-  }
 }

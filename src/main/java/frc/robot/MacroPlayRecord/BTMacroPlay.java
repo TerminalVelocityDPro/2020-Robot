@@ -92,4 +92,11 @@ public class BTMacroPlay{
 
     }
 
+    public void end(){
+        driveTrain.stop();
+        if(scanner != null){
+            scanner.close();
+        }
+    }
+
 }

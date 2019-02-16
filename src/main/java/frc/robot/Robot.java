@@ -17,6 +17,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.OIPlay;
+import frc.robot.commands.OIRecord;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -84,6 +86,8 @@ public class Robot extends TimedRobot {
 
     NetworkTable table = inst.getTable("visiontable");
     gyroData = table.getEntry("Gyro Angle");
+    m_autonomousCommand = new OIPlay();
+    record = new OIRecord();
   }
 
   /**
@@ -162,7 +166,7 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
     teleopDrive.start();
-    //record.start();
+    record.start();
 
     
 

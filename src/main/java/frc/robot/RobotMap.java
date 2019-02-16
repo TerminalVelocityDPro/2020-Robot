@@ -38,4 +38,8 @@ public class RobotMap {
 
   public static int hatchPanelMotor;
   public static int cargoMotor;
+
+  public static int defaultLeftP;
+  public static int defaultLeftI;
+  public static int defaultLeftD;
 }

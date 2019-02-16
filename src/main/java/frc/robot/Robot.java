@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -18,6 +21,7 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.OI;
 import edu.wpi.first.wpilibj.CameraServer;
+import sun.nio.ch.Net;
 
 
 /**
@@ -39,6 +43,9 @@ public class Robot extends TimedRobot {
   Command play;
   Command record;
   DriveTrain driveTrain;
+
+  NetworkTableEntry gyroData;
+
 
   
 
@@ -65,7 +72,12 @@ public class Robot extends TimedRobot {
     //record = new OIRecord();
     driveTrain = DriveTrain.getInstance();
     camera.startAutomaticCapture();
-    
+
+    NetworkTableInstance inst;
+    inst = NetworkTableInstance.getDefault();
+
+    NetworkTable table = inst.getTable("visiontable");
+    gyroData = table.getEntry("Gyro Angle");
   }
 
   /**
@@ -121,6 +133,8 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.start();
     }
 
+    gyroData.setDouble(Gyro.getAngle());
+
     
   }
 
@@ -154,6 +168,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    gyroData.setDouble(Gyro.getAngle());
     
   }
 

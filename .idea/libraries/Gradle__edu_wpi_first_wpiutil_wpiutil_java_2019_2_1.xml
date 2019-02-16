@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: edu.wpi.first.wpiutil:wpiutil-java:2019.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.wpi.first.wpiutil/wpiutil-java/2019.2.1/34136c973be7a9179fa6039c9db806f6c003a2d7/wpiutil-java-2019.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.wpi.first.wpiutil/wpiutil-java/2019.2.1/9f22623b40d993b8b8ad02bd8a04a62bb3d287b2/wpiutil-java-2019.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

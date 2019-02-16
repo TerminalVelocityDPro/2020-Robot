@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -20,7 +21,7 @@ import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.OI;
-import edu.wpi.first.wpilibj.CameraServer;
+
 import sun.nio.ch.Net;
 
 
@@ -35,7 +36,7 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
-  CameraServer camera = CameraServer.getInstance();
+
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -45,6 +46,7 @@ public class Robot extends TimedRobot {
   DriveTrain driveTrain;
 
   NetworkTableEntry gyroData;
+
 
 
   
@@ -63,6 +65,10 @@ public class Robot extends TimedRobot {
     Gyro.calibrate();
     Gyro.reset();
 
+    CameraServer.getInstance().startAutomaticCapture();
+
+
+
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -71,7 +77,7 @@ public class Robot extends TimedRobot {
     //m_autonomousCommand = new OIPlay();
     //record = new OIRecord();
     driveTrain = DriveTrain.getInstance();
-    camera.startAutomaticCapture();
+
 
     NetworkTableInstance inst;
     inst = NetworkTableInstance.getDefault();

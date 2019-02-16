@@ -17,6 +17,8 @@ import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.OI;
+import edu.wpi.first.wpilibj.CameraServer;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,12 +31,16 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
+  CameraServer camera = CameraServer.getInstance();
+
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
   Command teleopDrive;
   Command play;
   Command record;
   DriveTrain driveTrain;
+
+  
 
   /**
    * This function is run when the robot is first started up and should be
@@ -47,6 +53,9 @@ public class Robot extends TimedRobot {
    //Saadi vs. LIMELIGHT
   @Override
   public void robotInit() {
+    Gyro.calibrate();
+    Gyro.reset();
+
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -55,6 +64,7 @@ public class Robot extends TimedRobot {
     //m_autonomousCommand = new OIPlay();
     //record = new OIRecord();
     driveTrain = DriveTrain.getInstance();
+    camera.startAutomaticCapture();
     
   }
 

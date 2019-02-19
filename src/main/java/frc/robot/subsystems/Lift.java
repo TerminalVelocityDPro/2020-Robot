@@ -25,9 +25,17 @@ public class Lift extends Subsystem {
   //PID Loops
   //Encoders
   //Limit Switches
+  //Lift - One motor rotation for a winch to lift up robot from foot at endgame, goes in both directions so we can pick
+  //foot back up.
+  //Rotation - two motor gearbox that powers the flip at endgame, one time use, one direction
 
-  Spark verticalLift = new Spark(RobotMap.verticalLift);
-  Spark flip = new Spark(RobotMap.flip);
+
+
+  Spark winch = new Spark(RobotMap.winch);
+
+
+  Spark flipMotor1 = new Spark(RobotMap.flipMotor1);
+  Spark flipMotor2 = new Spark(RobotMap.flipMotor2);
 
   public static Lift instance = new Lift();
 
@@ -39,6 +47,15 @@ public class Lift extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+
+  public void lift(double num){
+    winch.set(num);
+  }
+
+  public void flip(double num1, double num2){
+    flipMotor1.set(num1);
+    flipMotor2.set(num2);
   }
 
   

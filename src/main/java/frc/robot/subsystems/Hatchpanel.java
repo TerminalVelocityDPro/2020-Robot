@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.Encoder;
@@ -27,10 +28,14 @@ public class Hatchpanel extends Subsystem {
   //PID Loops
   //Limit Switches
   //Encoders
+  //Hatchpanel - rotation with one motor and pneumatics to push off the hatch panel,
+  //Angules of rotation for dropoff and pickup.
 
-  Spark hatchPanelMotor = new Spark(RobotMap.hatchPanelMotor);
+  Spark rotator = new Spark(RobotMap.rotator);
 
   public static Hatchpanel instance = new Hatchpanel();
+
+  DoubleSolenoid pusher = new DoubleSolenoid(0,1);
 
   public static Hatchpanel getInstance(){
     return instance;
@@ -41,5 +46,17 @@ public class Hatchpanel extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+
+  public void pushOff(){
+    pusher.set(DoubleSolenoid.Value.kForward);
+  }
+
+  public void reset(){
+    pusher.set(DoubleSolenoid.Value.kReverse);
+  }
+
+  public void rotate(double num){
+    rotator.set(num);
   }
 }

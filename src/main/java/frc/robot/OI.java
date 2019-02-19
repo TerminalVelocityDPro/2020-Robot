@@ -8,9 +8,9 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.OI;
+import frc.robot.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -48,18 +48,26 @@ public class OI {
   public static Joystick rightJoystick = new Joystick(1);
 
   public static JoystickButton leftTrigger = new JoystickButton(leftJoystick, 1);
-	public static JoystickButton leftButton3 = new JoystickButton(leftJoystick, 3);
-	public static JoystickButton leftButton4 = new JoystickButton(leftJoystick, 4);
-	public static JoystickButton leftButton5 = new JoystickButton(leftJoystick, 5);
-	public static JoystickButton leftButton6 = new JoystickButton(leftJoystick, 6);
+  public static JoystickButton leftButton3 = new JoystickButton(leftJoystick, 3);
+  public static JoystickButton leftButton4 = new JoystickButton(leftJoystick, 4);
+  public static JoystickButton leftButton5 = new JoystickButton(leftJoystick, 5);
+  public static JoystickButton leftButton6 = new JoystickButton(leftJoystick, 6);
 
 	
 
-	public static JoystickButton rightTrigger = new JoystickButton(rightJoystick, 1);
-	public static JoystickButton rightButton3 = new JoystickButton(rightJoystick, 3);
+  public static JoystickButton rightTrigger = new JoystickButton(rightJoystick, 1);
+  public static JoystickButton rightButton3 = new JoystickButton(rightJoystick, 3);
   public static JoystickButton rightButton4 = new JoystickButton(rightJoystick, 4);
   
   public static XboxController xbox = new XboxController(2);
+
+  static{
+      OI.xbox.a.whileHeld(new Winch(1));
+      OI.xbox.b.whileHeld(new RotateHP(1));
+      OI.xbox.x.whenPressed(new Flip(1,1));
+      OI.xbox.rt.whenPressed(new PushHP());
+      OI.xbox.lt.whenPressed(new ResetHP());
+  }
 
   
 

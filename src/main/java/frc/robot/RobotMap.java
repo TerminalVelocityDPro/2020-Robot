@@ -33,12 +33,12 @@ public class RobotMap {
   public static int backRightDrive = 4;
   public static int backRightAngle;
   
-  public static int winch;
-  public static int flipMotor1;
-  public static int flipMotor2;
+  public static int winch = 6;
+  public static int flipMotor1 = 7;
+  public static int flipMotor2 = 8;
 
   public static int rotator;
-  public static int cargoMotor;
+  public static int cargoMotor; //lol
 
   public static int defaultLeftP;
   public static int defaultLeftI;

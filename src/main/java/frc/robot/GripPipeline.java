@@ -40,43 +40,39 @@ public class GripPipeline {
 	}
 
 	/**
-	 * This runs the entire pipeline and outputs. 
+	 * This runs the entire pipeline with parameters organized for each step (as blocks). 
 	 */
 	public void process(Mat source0) {
-		// Step Resize_Image0:
 		Mat resizeImageInput = source0;
 		double resizeImageWidth = 640;
 		double resizeImageHeight = 480;
 		int resizeImageInterpolation = Imgproc.INTER_CUBIC;
 		resizeImage(resizeImageInput, resizeImageWidth, resizeImageHeight, resizeImageInterpolation, resizeImageOutput);
 
-		// Step RGB_Threshold0:
 		Mat rgbThresholdInput = resizeImageOutput;
+		//Values auto-generated, hence the precision.
 		double[] rgbThresholdRed = {177.68361581920902, 255.0};
 		double[] rgbThresholdGreen = {0.0, 255.0};
 		double[] rgbThresholdBlue = {42.2598870056497, 255.0};
 		rgbThreshold(rgbThresholdInput, rgbThresholdRed, rgbThresholdGreen, rgbThresholdBlue, rgbThresholdOutput);
 
-		// Step HSL_Threshold0:
+
 		Mat hslThresholdInput = resizeImageOutput;
 		double[] hslThresholdHue = {0.0, 158.49828179785823};
 		double[] hslThresholdSaturation = {0.0, 143.31057467151422};
 		double[] hslThresholdLuminance = {126.8884841057894, 255.0};
 		hslThreshold(hslThresholdInput, hslThresholdHue, hslThresholdSaturation, hslThresholdLuminance, hslThresholdOutput);
 
-		// Step Find_Contours0:
 		Mat findContoursInput = rgbThresholdOutput;
 		boolean findContoursExternalOnly = false;
 		findContours(findContoursInput, findContoursExternalOnly, findContoursOutput);
 
-		// Step Find_Blobs0:
 		Mat findBlobsInput = hslThresholdOutput;
 		double findBlobsMinArea = 1000.0;
 		double[] findBlobsCircularity = {0.14388489208633093, 1.0};
 		boolean findBlobsDarkBlobs = false;
 		findBlobs(findBlobsInput, findBlobsMinArea, findBlobsCircularity, findBlobsDarkBlobs, findBlobsOutput);
 
-		// Step Filter_Contours0:
 		ArrayList<MatOfPoint> filterContoursContours = findContoursOutput;
 		double filterContoursMinArea = 1000.0;
 		double filterContoursMinPerimeter = 0;
@@ -127,7 +123,7 @@ public class GripPipeline {
 
 
 	/**
-	 * Scales and image to an exact size.
+	 * Scales and image to an exact size (and sets interpolation type lol). 
 	 */
 	private void resizeImage(Mat input, double width, double height,
 		int interpolation, Mat output) {
@@ -164,6 +160,7 @@ public class GripPipeline {
 		contours.clear();
 		int mode;
 		if (externalOnly) {
+			//Note: look up in opencv documentation.
 			mode = Imgproc.RETR_EXTERNAL;
 		}
 		else {
@@ -176,14 +173,14 @@ public class GripPipeline {
 	/**
 	 * Detects groups of pixels in an image.
 	 * circularity - how circular blob is, don't know the theory behind this though. 
-	 * darkBlobs - The boolean that determines if light or dark blobs are found.
+	 * darkBlobs - boolean: if light or dark blobs are found.
 	 * blobList - The output where the MatOfKeyPoint is stored.
 	 */
 	private void findBlobs(Mat input, double minArea, double[] circularity,
 		Boolean darkBlobs, MatOfKeyPoint blobList) {
 		FeatureDetector blobDet = FeatureDetector.create(FeatureDetector.SIMPLEBLOB);
 		
-		//Make config file
+		//Make config file for t
 		try {
 			File tempFile = File.createTempFile("config", ".xml");
 

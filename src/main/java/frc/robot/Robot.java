@@ -78,8 +78,9 @@ public class Robot extends TimedRobot {
     Gyro.calibrate();
     Gyro.reset();
 
-    //cameraserver for live roborio
+    //cameraserver for live roborio, if you want to lower resolution it's better to use the format below (resize)
     CameraServer.getInstance().startAutomaticCapture();
+    
     
     // thread format for vision roborio-connected camera, as needed.
     /*

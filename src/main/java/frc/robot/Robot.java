@@ -7,7 +7,17 @@
 
 package frc.robot;
 
-import edu.wpi.first.cameraserver.CameraServer;
+//image process
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+import edu.wpi.cscore.CvSink;
+import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer; //duplicate? idk
+
+//main
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.cameraserver.CameraServer; 
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -62,12 +72,40 @@ public class Robot extends TimedRobot {
    //Hatchpanel - 1 CIM Motors, Rotate Back and Forth, Limit Switches, Encoders
    //Cargo - 2 Bag Motors, Encoders, Limit Switches
    //Saadi vs. LIMELIGHT
+   // what? xDDDDDD - saadi 
   @Override
   public void robotInit() {
     Gyro.calibrate();
     Gyro.reset();
 
+    //cameraserver for live roborio
     CameraServer.getInstance().startAutomaticCapture();
+    
+    // thread format for vision roborio-connected camera, as needed.
+    /*
+    new Thread(() -> {
+                UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+                camera.setResolution(640, 480);
+                
+                CvSink cvSink = CameraServer.getInstance().getVideo();
+                CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+                
+                Mat source = new Mat();
+                Mat output = new Mat();
+                
+                while(!Thread.interrupted()) {
+                    cvSink.grabFrame(source);
+                  
+                  
+                    //add converted opencv code here, example line below converts to greyscale
+                    Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+                  
+                  
+                    outputStream.putFrame(output);
+                }
+            }).start();
+            
+      */
 
 
 

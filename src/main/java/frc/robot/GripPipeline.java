@@ -44,13 +44,15 @@ public class GripPipeline {
 	 */
 	public void process(Mat source0) {
 		Mat resizeImageInput = source0;
+		//Mat resizeImageInputLive = source1 
 		double resizeImageWidth = 640;
 		double resizeImageHeight = 480;
 		int resizeImageInterpolation = Imgproc.INTER_CUBIC;
 		resizeImage(resizeImageInput, resizeImageWidth, resizeImageHeight, resizeImageInterpolation, resizeImageOutput);
 
 		Mat rgbThresholdInput = resizeImageOutput;
-		//Values auto-generated, hence the precision.
+		//Values auto-generated, hence the precision. Note that roborio does not support hard precision
+		//doubles while GRIP does use them, fix... coming soon?
 		double[] rgbThresholdRed = {177.68361581920902, 255.0};
 		double[] rgbThresholdGreen = {0.0, 255.0};
 		double[] rgbThresholdBlue = {42.2598870056497, 255.0};

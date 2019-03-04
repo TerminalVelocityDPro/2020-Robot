@@ -5,12 +5,12 @@ import frc.robot.subsystems.Hatchpanel;
 
 
 public class RotateHP extends Command {
-    Hatchpanel hatchpanel = new Hatchpanel();
+    Hatchpanel hatchpanel = Hatchpanel.getInstance();
     double speed;
 
 
     public RotateHP(double spd) {
-        hatchpanel = Hatchpanel.getInstance();
+
         requires(hatchpanel);
         speed = spd;
         // Use requires() here to declare subsystem dependencies
@@ -91,6 +91,6 @@ public class RotateHP extends Command {
      */
     @Override
     protected void interrupted() {
-        super.interrupted();
+
     }
 }

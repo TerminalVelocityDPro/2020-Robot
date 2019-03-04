@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/2020-Robot.iml" filepath="$PROJECT_DIR$/2020-Robot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2020-Robot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/2020-Robot.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2020-Robot.test.iml" filepath="$PROJECT_DIR$/.idea/modules/2020-Robot.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2020-Robot1.iml" filepath="$PROJECT_DIR$/2020-Robot1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2020-Robot1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/2020-Robot1.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2020-Robot1.test.iml" filepath="$PROJECT_DIR$/.idea/modules/2020-Robot1.test.iml" />
     </modules>
   </component>
 </project>

@@ -25,22 +25,24 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   public static int frontLeftDrive = 1;
-  public static int frontLeftAngle;
+  //public static int frontLeftAngle;
   public static int backLeftDrive = 2;
-  public static int backLeftAngle;
+  //public static int backLeftAngle;
   public static int frontRightDrive = 3;
-  public static int frontRightAngle;
+  //public static int frontRightAngle;
   public static int backRightDrive = 4;
-  public static int backRightAngle;
-  
+  //public static int backRightAngle;
+
   public static int winch = 6;
   public static int flipMotor1 = 7;
   public static int flipMotor2 = 8;
 
-  public static int rotator;
-  public static int cargoMotor; //lol
+  public static int hatchpanelLimit = 2;
 
-  public static int defaultLeftP;
-  public static int defaultLeftI;
-  public static int defaultLeftD;
+  public static int rotator = 0;
+  //public static int cargoMotor; //lol
+
+  public static double defaultLeftP=0.02;
+  public static double defaultLeftI=0;
+  public static double defaultLeftD=0;
 }

@@ -22,6 +22,7 @@ public class TankDrive extends Command {
   public TankDrive() {
 
     driveTrain = DriveTrain.getInstance();
+
     requires(driveTrain);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -36,10 +37,16 @@ public class TankDrive extends Command {
   @Override
   protected void execute() {
     //saadi - setting to get negative value for right joystick protects leftspeed value?? 
-    double leftSpeed = Math.pow(OI.leftJoystick.getY(), 3);
-    double rightSpeed = Math.pow(-OI.rightJoystick.getY(), 3);
+    //double leftSpeed = Math.pow(OI.leftJoystick.getY(), 3);
+    //double rightSpeed = Math.pow(-OI.rightJoystick.getY(), 3);
+    double leftSpeed = OI.leftJoystick.getY();
+    double rightSpeed = -OI.rightJoystick.getY();
 
     driveTrain.drive(leftSpeed, rightSpeed);
+
+    if(OI.leftTrigger.get()){
+      driveTrain.closeDrive(leftSpeed, rightSpeed);
+    }
     
   }
 

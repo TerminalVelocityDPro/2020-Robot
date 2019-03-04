@@ -5,10 +5,9 @@ import frc.robot.subsystems.Hatchpanel;
 
 
 public class ResetHP extends Command {
-    Hatchpanel hatchpanel = new Hatchpanel();
+    Hatchpanel hatchpanel = Hatchpanel.getInstance();
 
     public ResetHP() {
-        hatchpanel = Hatchpanel.getInstance();
         requires(hatchpanel);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -88,6 +87,6 @@ public class ResetHP extends Command {
      */
     @Override
     protected void interrupted() {
-        super.interrupted();
+
     }
 }

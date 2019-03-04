@@ -111,6 +111,15 @@ public class DriveTrain extends Subsystem {
     lastLeft = leftSpeed;
   }
 
+  public void closeDrive(double leftSpeed, double rightSpeed){
+    frontLeftDrive.set(0.5 * leftSpeed);
+    backLeftDrive.set(0.5 * leftSpeed);
+    frontRightDrive.set(0.5 * rightSpeed);
+    backRightDrive.set(0.5 * rightSpeed);
+    lastRight = rightSpeed;
+    lastLeft = leftSpeed;
+  }
+
   public void setLeftSpeed(double leftSpeed){
     frontLeftDrive.set(leftSpeed);
     backLeftDrive.set(leftSpeed);

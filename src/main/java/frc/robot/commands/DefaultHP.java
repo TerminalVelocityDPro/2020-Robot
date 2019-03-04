@@ -1,19 +1,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
-import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Hatchpanel;
 
 
-public class Winch extends Command {
-    Lift lift = Lift.getInstance();
-    double speed;
+public class DefaultHP extends Command {
+    Hatchpanel hatchpanel = Hatchpanel.getInstance();
 
-
-    public Winch(double spd) {
-
-        requires(lift);
-        speed = spd;
+    public DefaultHP() {
+        requires(hatchpanel);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -24,7 +19,10 @@ public class Winch extends Command {
      * this Command is run after being started.
      */
     @Override
-    protected void initialize(){}
+    protected void initialize() {
+
+
+    }
 
 
     /**
@@ -33,8 +31,7 @@ public class Winch extends Command {
      */
     @Override
     protected void execute() {
-
-        lift.lift(speed);
+        hatchpanel.hold();
 
 
     }
@@ -92,6 +89,6 @@ public class Winch extends Command {
      */
     @Override
     protected void interrupted() {
-
+        super.interrupted();
     }
 }

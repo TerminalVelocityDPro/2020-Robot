@@ -1,4 +1,5 @@
-package edu.wpi.first.wpilibj.templates.subsystems;
+package frc.robot.commands;
+
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -27,7 +28,7 @@ public class LiftUp extends Subsystem {
     }
 
     public void liftUp() {
-        //add
+        //add spark 6
     }
 
     public void liftDown() {

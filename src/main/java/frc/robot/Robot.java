@@ -8,33 +8,26 @@
 package frc.robot;
 
 //image process
-import org.opencv.core.Mat;
-import org.opencv.imgproc.Imgproc;
+
+//main
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.cscore.CvSink;
 import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.UsbCamera;
-import edu.wpi.first.wpilibj.CameraServer; //duplicate? idk
-
-//main
-import edu.wpi.first.wpilibj.IterativeRobot;
-//import edu.wpi.first.cameraserver.CameraServer; 
+//import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.commands.OIPlay;
-import frc.robot.commands.OIRecord;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.OI;
-
-//import sun.nio.ch.Net;
+import org.opencv.core.Mat;
+//import frc.robot.subsystems.ExampleSubsystem;
+//Loop on and off for lift thing
 
 
 /**
@@ -45,7 +38,6 @@ import frc.robot.OI;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
 
@@ -53,11 +45,12 @@ public class Robot extends TimedRobot {
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
   Command teleopDrive;
-  Command play;
-  Command record;
+  //Command play;
+  //Command record;
   DriveTrain driveTrain;
 
   NetworkTableEntry gyroData;
+  Compressor c;
 
 
 
@@ -79,41 +72,41 @@ public class Robot extends TimedRobot {
     Gyro.reset();
 
     //cameraserver for live roborio, if you want to lower resolution it's better to use the format below (resize)
-    CameraServer.getInstance().startAutomaticCapture();
+    //CameraServer.getInstance().startAutomaticCapture();
+    //camera.setResolution(640, 480);
     
     
     // thread format for vision roborio-connected camera, as needed.
-    /*
+
     new Thread(() -> {
                 UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
                 camera.setResolution(640, 480);
                 
-                CvSink cvSink = CameraServer.getInstance().getVideo();
-                CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+                //CvSink cvSink = CameraServer.getInstance().getVideo();
+                //
+      // CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
                 
-                Mat source = new Mat();
-                Mat output = new Mat();
+                //Mat source = new Mat();
+                //Mat output = new Mat();
                 
-                while(!Thread.interrupted()) {
-                    cvSink.grabFrame(source);
+                //while(!Thread.interrupted()) {
+                    //cvSink.grabFrame(source);
                   
                   
                     //add converted opencv code here, example line below converts to greyscale
-                    Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+                    //Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
                   
                   
-                    outputStream.putFrame(output);
-                }
+                    //outputStream.putFrame(output);
+                //}
             }).start();
-            
-      */
 
 
 
     m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
+    //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
-    SmartDashboard.putData("Auto mode", m_chooser);
+    //SmartDashboard.putData("Auto mode", m_chooser);
     teleopDrive = new TankDrive();
     //m_autonomousCommand = new OIPlay();
     //record = new OIRecord();
@@ -125,8 +118,9 @@ public class Robot extends TimedRobot {
 
     NetworkTable table = inst.getTable("visiontable");
     gyroData = table.getEntry("Gyro Angle");
-    m_autonomousCommand = new OIPlay();
-    record = new OIRecord();
+    //m_autonomousCommand = new OIPlay();
+    //record = new OIRecord();
+    c = new Compressor(0);
   }
 
   /**
@@ -168,6 +162,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    c.setClosedLoopControl(true);
     m_autonomousCommand = m_chooser.getSelected();
 
     /*
@@ -197,6 +192,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+    c.setClosedLoopControl(true);
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
@@ -205,7 +201,7 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
     teleopDrive.start();
-    record.start();
+    //record.start();
 
     
 

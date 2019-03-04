@@ -62,11 +62,17 @@ public class OI {
   public static XboxController xbox = new XboxController(2);
 
   static{
-      OI.xbox.a.whileHeld(new Winch(1));
-      OI.xbox.b.whileHeld(new RotateHP(1));
-      OI.xbox.x.whenPressed(new Flip(1,1));
-      OI.xbox.rt.whenPressed(new PushHP());
-      OI.xbox.lt.whenPressed(new ResetHP());
+      OI.xbox.rt.whileHeld(new RotateHP(-0.5));
+      OI.xbox.lt.whileHeld(new RotateHP(0.68));
+      OI.xbox.y.whileHeld(new Winch(0.5));
+      OI.xbox.x.whileHeld(new Winch(-0.5));
+      OI.xbox.dPad.right.whenPressed(new DefaultWinch());
+
+
+      OI.xbox.dPad.down.whileHeld(new Flip(0.75));
+      OI.xbox.dPad.up.whileHeld(new Flip(-0.75));
+      OI.xbox.a.whenPressed(new PushHP());
+      OI.xbox.b.whenPressed(new ResetHP());
   }
 
   

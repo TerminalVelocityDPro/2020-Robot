@@ -4,16 +4,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Lift;
 
 
-public class Flip extends Command {
-    Lift lift = new Lift();
-    double speed1;
-    double speed2;
 
-    public Flip(double spd1, double spd2) {
-        lift = Lift.getInstance();
+public class Flip extends Command {
+    Lift lift = Lift.getInstance();
+    double speed1;
+
+    public Flip(double spd1) {
         requires(lift);
         speed1 = spd1;
-        speed2 = spd2;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -36,7 +34,7 @@ public class Flip extends Command {
      */
     @Override
     protected void execute() {
-        lift.flip(speed1, speed2);
+        lift.flip(speed1);
 
     }
 
@@ -93,6 +91,6 @@ public class Flip extends Command {
      */
     @Override
     protected void interrupted() {
-        super.interrupted();
+
     }
 }

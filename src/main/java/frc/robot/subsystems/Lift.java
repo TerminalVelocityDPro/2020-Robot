@@ -51,20 +51,13 @@ public class Lift extends Subsystem {
     public void initDefaultCommand() {
         boolean beforeLift = false;
 
-        if(OI.xbox.dPad.left.get()){
-            beforeLift = false;
-        }
+        OI.xbox.dPad.left.whenPressed(setDefaultCommand(new DefaultWinch()));
 
-        if(OI.xbox.dPad.right.get()){
-            beforeLift = true;
-        }
+        OI.xbox.dPad.right.whenPressed(setDefaultCommand(new DefaultWinchBefore()));
 
-        if(beforeLift == true){
-            setDefaultCommand(new DefaultWinch());
-        }
-        else if(beforeLift == false){
-            setDefaultCommand(new DefaultWinchBefore());
-        }
+        
+
+        
         // TODO: Set the default command, if any, for a subsystem here. Example:
         //    setDefaultCommand(new MySpecialCommand());
     }

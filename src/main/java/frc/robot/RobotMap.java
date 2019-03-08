@@ -39,7 +39,7 @@ public class RobotMap {
 
   public static int hatchpanelLimit = 2;
 
-  public static int rotator = 0;
+  public static int rotator = 9;
   //public static int cargoMotor; //lol
 
   public static double defaultLeftP=0.02;

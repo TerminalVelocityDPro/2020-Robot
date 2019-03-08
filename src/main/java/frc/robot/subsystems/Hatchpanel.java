@@ -18,7 +18,7 @@ public class Hatchpanel extends Subsystem {
     DigitalInput hatchpanelLimit = new DigitalInput(RobotMap.hatchpanelLimit);
     Counter counter = new Counter(hatchpanelLimit);
     double reverseHoldSpeed = -0.25;
-    DoubleSolenoid pusher = new DoubleSolenoid(0,1);
+    DoubleSolenoid pusher = new DoubleSolenoid(1,0);
 
     public static Hatchpanel getInstance() {
         return instance;

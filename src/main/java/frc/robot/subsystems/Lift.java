@@ -30,7 +30,7 @@ public class Lift extends Subsystem {
     }
 
     public void holdV1(){
-        winch.set(0);
+        winch.set(0.1);
 
     }
 
@@ -44,16 +44,33 @@ public class Lift extends Subsystem {
         flipMotor2.set(num1);
     }
 
+    boolean beforeLift = false;
+
 
 
 
 
     public void initDefaultCommand() {
-        boolean beforeLift = false;
+        //boolean beforeLift = true;+
 
-        OI.xbox.dPad.left.whenPressed(setDefaultCommand(new DefaultWinch()));
+        //if(OI.xbox.dPad.left.get()){
+            //beforeLift = true;
+        //}
+       // else{
+            //beforeLift = false;
+            //int beforeLift flag = 0;
+            // what is the use of this flag... unused?
+        //}
 
-        OI.xbox.dPad.right.whenPressed(setDefaultCommand(new DefaultWinchBefore()));
+        //if(beforeLift){
+            //setDefaultCommand(new DefaultWinch());
+        //}
+        //else{
+            setDefaultCommand(new DefaultWinchBefore());
+        //}
+
+
+
 
         
 

@@ -26,6 +26,7 @@ public class LiftTimed extends TimedCommand {
   public LiftTimed(double timeout, double spd1) {
     super(timeout);
     speed1 = spd1;
+    requires(lift);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }

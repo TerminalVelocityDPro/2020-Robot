@@ -34,6 +34,7 @@ public class Flip extends Command {
      */
     @Override
     protected void execute() {
+        lift.holdV2();
         lift.flip(speed1);
 
     }

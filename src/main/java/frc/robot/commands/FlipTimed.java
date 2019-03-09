@@ -36,7 +36,9 @@ public class FlipTimed extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    //lift.reverseWinch(0);
     lift.flip(speed1);
+
 
   }
 

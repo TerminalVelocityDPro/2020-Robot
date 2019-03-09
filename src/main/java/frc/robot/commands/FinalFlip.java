@@ -13,8 +13,11 @@ import frc.robot.subsystems.Lift;
 public class FinalFlip extends CommandGroup {
 
   public FinalFlip() {
-    addSequential(new Flip(-0.75));
-    addSequential(new LiftTimed(90, -0.5));
+    //addSequential(new ReverseWinch(3,1)); //Reverse
+    //addSequential(new Delay(3, 0)); //Delay
+    addParallel(new FlipTimed(20,.75));
+    addSequential(new Delay(20, 0));
+    //addSequential(new LiftTimed(10, -0.5));
 
   }
 }

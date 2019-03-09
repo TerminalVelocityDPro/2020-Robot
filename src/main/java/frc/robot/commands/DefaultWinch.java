@@ -31,7 +31,14 @@ public class DefaultWinch extends Command {
     @Override
     protected void execute() {
 
-        lift.holdV2();
+        //lift.holdV2();
+        lift.turnOff();
+        lift.reverseWinch(.35);
+        if(OI.xbox.y.get() || OI.xbox.dPad.up.get() || OI.xbox.x.get()){
+            lift.holdV2();
+            //lift.turnOffReverse();
+            lift.reverseWinch(-0.25);
+        }
         //0.25 can hold it.
 
 

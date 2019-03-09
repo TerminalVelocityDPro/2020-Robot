@@ -16,6 +16,7 @@ public class Lift extends Subsystem {
 
 
     Spark winch = new Spark(RobotMap.winch);
+    Spark winch2 = new Spark(RobotMap.winch2);
     Spark flipMotor1 = new Spark(RobotMap.flipMotor1);
     Spark flipMotor2 = new Spark(RobotMap.flipMotor2);
     public static Lift instance = new Lift();
@@ -30,12 +31,24 @@ public class Lift extends Subsystem {
     }
 
     public void holdV1(){
-        winch.set(0.1);
+        //winch.set(0.1);
+        //winch2.set(0.25);
 
     }
 
+    public void turnOff(){
+        winch.stopMotor();
+    }
+    public void turnOffReverse(){
+        winch2.set(-.35);
+    }
+
     public void holdV2(){
-        winch.set(0.25);
+        winch.set(0.35);
+    }
+
+    public void reverseWinch(double num1){
+        winch2.set(num1);
     }
 
 
@@ -44,13 +57,15 @@ public class Lift extends Subsystem {
         flipMotor2.set(num1);
     }
 
-    boolean beforeLift = false;
+    //boolean beforeLift = false;
 
 
 
 
 
     public void initDefaultCommand() {
+
+
         //boolean beforeLift = true;+
 
         //if(OI.xbox.dPad.left.get()){
@@ -66,7 +81,7 @@ public class Lift extends Subsystem {
             //setDefaultCommand(new DefaultWinch());
         //}
         //else{
-            setDefaultCommand(new DefaultWinchBefore());
+        setDefaultCommand(new DefaultWinch());
         //}
 
 

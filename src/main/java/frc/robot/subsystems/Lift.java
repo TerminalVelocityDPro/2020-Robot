@@ -25,6 +25,33 @@ public class Lift extends Subsystem {
     }
     boolean liftFlag = false;
 
+    public double getWinch(){
+        return winch.get();
+    }
+
+    public void setWinch(double num1){
+        winch.set(num1);
+    }
+
+    public double getFlipMotor1(){
+        return flipMotor1.get();
+    }
+
+    public void setFlipMotor1(double num1){
+        flipMotor1.set(num1);
+    }
+
+    public double getFlipMotor2(){
+        return flipMotor2.get();
+    }
+
+    public void setFlipMotor2(double num1){
+        flipMotor2.set(num1);
+    }
+
+
+
+
     public void lift(double num){
         winch.set(num);
         liftFlag = true;

@@ -11,7 +11,8 @@ import java.util.Scanner;
 
 
 import frc.robot.subsystems.DriveTrain;
-
+import frc.robot.subsystems.Hatchpanel;
+import frc.robot.subsystems.Lift;
 
 
 public class BTMacroPlay{
@@ -19,6 +20,8 @@ public class BTMacroPlay{
 
 
     DriveTrain driveTrain = DriveTrain.getInstance();
+    Hatchpanel hatchpanel = Hatchpanel.getInstance();
+    Lift lift = Lift.getInstance();
 
     Scanner scanner;
 
@@ -34,7 +37,7 @@ public class BTMacroPlay{
 
     public BTMacroPlay() throws FileNotFoundException{
 
-        scanner = new Scanner(new File(""));
+        scanner = new Scanner(new File("recordedAuto.csv"));
 
 
 
@@ -77,6 +80,12 @@ public class BTMacroPlay{
                 driveTrain.setBackLeft(scanner.nextDouble());
 
                 driveTrain.setBackRight(scanner.nextDouble());
+
+                hatchpanel.setRotator(scanner.nextDouble());
+                hatchpanel.setSolenoid(scanner.nextDouble());
+                lift.setWinch(scanner.nextDouble());
+                lift.setFlipMotor1(scanner.nextDouble());
+                lift.setFlipMotor2(scanner.nextDouble());
 
 
 

@@ -30,13 +30,39 @@ public class Hatchpanel extends Subsystem {
         //    setDefaultCommand(new MySpecialCommand());
     }
 
+    public double getRotator(){
+        return rotator.get();
+    }
+
+    public void setRotator(double num1){
+        rotator.set(num1);
+    }
+
+    public void setSolenoid(double num1){
+        if(num1 == 1){
+            pusher.set(DoubleSolenoid.Value.kForward);
+        }
+        else if(num1 == 0){
+            pusher.set(DoubleSolenoid.Value.kReverse);
+        }
+    }
+
+    public double getSolenoid(){
+        double value = 0;
+        if(pusher.get() == DoubleSolenoid.Value.kForward){
+            value = 1;
+        }
+        else if(pusher.get() == DoubleSolenoid.Value.kReverse){
+            value = 0;
+        }
+        return value;
+    }
+
     public void hold(){
         rotator.set(0.25);
         if(counter.get() > 0){
             rotator.set(-0.25);
         }
-
-
     }
 
     public void pushOff(){

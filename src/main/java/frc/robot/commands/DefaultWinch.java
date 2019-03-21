@@ -32,13 +32,18 @@ public class DefaultWinch extends Command {
     protected void execute() {
 
         //lift.holdV2();
-        lift.turnOff();
-        lift.reverseWinch(.35);
-        if(OI.xbox.y.get() || OI.xbox.dPad.up.get() || OI.xbox.x.get()){
-            lift.holdV2();
-            //lift.turnOffReverse();
-            lift.reverseWinch(-0.25);
+        //lift.turnOff();
+        lift.reverseWinch(.5);
+
+        if(lift.getWinch() == 1){
+           lift.reverseWinch(0);
         }
+
+        //if(OI.xbox.y.get() || OI.xbox.dPad.up.get() || OI.xbox.x.get()){
+            //lift.holdV2();
+            //lift.turnOffReverse();
+            //lift.reverseWinch(-0.25);
+        //}
         //0.25 can hold it.
 
 

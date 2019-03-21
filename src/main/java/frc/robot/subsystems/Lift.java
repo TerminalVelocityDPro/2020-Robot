@@ -105,10 +105,10 @@ public class Lift extends Subsystem {
         //}
 
         //if(beforeLift){
-            //setDefaultCommand(new DefaultWinch());
+        setDefaultCommand(new DefaultWinch());
         //}
         //else{
-        setDefaultCommand(new DefaultWinch());
+        //setDefaultCommand(new DefaultWinch());
         //}
 
 

@@ -67,11 +67,13 @@ public class OI {
       //rotate arm down
       OI.xbox.lt.whileHeld(new RotateHP(0.68));
       OI.xbox.y.whileHeld(new Winch(1));
-      OI.xbox.x.whileHeld(new Winch(0.0));
-      OI.xbox.dPad.right.whenPressed(new DefaultWinch());
+      OI.xbox.dPad.right.whileHeld(new Winch(0.5));
+      OI.xbox.x.whileHeld(new Winch(-1));
+      OI.leftTrigger.whileHeld(new TestReverseWinch(0));
       //Use reverse winch for game only
-      //Unwind reverse winch for flip
+      //Unwind rever//se winch for flip
       //Use only winch for flip
+      OI.rightTrigger.whileHeld(new TestReverseWinch(-.5));
       OI.xbox.dPad.up.whenPressed(new Flip(-0.75));
       OI.xbox.dPad.down.whenPressed(new Flip(0.05));
       //OI.xbox.dPad.up.whileHeld(new FinalFlip());

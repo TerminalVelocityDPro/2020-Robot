@@ -73,18 +73,24 @@ public class Robot extends TimedRobot {
 
     //cameraserver for live roborio, if you want to lower resolution it's better to use the format below (resize)
     //CameraServer.getInstance().startAutomaticCapture();
+    UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+    camera.setResolution(320,240);
+    camera.setFPS(20);
+  
     //camera.setResolution(640, 480);
     
     
     // thread format for vision roborio-connected camera, as needed.
 
     new Thread(() -> {
-                UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-                camera.setResolution(640, 480);
+                UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
+                camera1.setResolution(320, 240);
+                camera1.setFPS(20);
+    }).start();
                 
                 //CvSink cvSink = CameraServer.getInstance().getVideo();
                 //
-      // CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+                // CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
                 
                 //Mat source = new Mat();
                 //Mat output = new Mat();
@@ -99,7 +105,7 @@ public class Robot extends TimedRobot {
                   
                     //outputStream.putFrame(output);
                 //}
-            }).start();
+            //}).start();
 
 
 

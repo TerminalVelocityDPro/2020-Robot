@@ -1,18 +1,17 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
-import frc.robot.subsystems.Hatchpanel;
 import frc.robot.subsystems.Lift;
 
 
-public class DefaultWinch extends Command {
+public class TestReverseWinch extends Command {
     Lift lift = Lift.getInstance();
-    //Hatchpanel hatchpanel = Hatchpanel.getInstance();
-    boolean holdUp = false;
-    public DefaultWinch() {
+    double speed1;
+
+
+    public TestReverseWinch(double spd1) {
         requires(lift);
-        //requires(hatchpanel);
+        speed1 = spd1;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -24,6 +23,7 @@ public class DefaultWinch extends Command {
      */
     @Override
     protected void initialize() {
+        //lift.reverseWinch(0);
 
     }
 
@@ -34,80 +34,7 @@ public class DefaultWinch extends Command {
      */
     @Override
     protected void execute() {
-
-        if(OI.xbox.y.get() || (OI.leftTrigger.get()) || (OI.rightTrigger.get())){
-            holdUp = true;
-        }
-
-        if(holdUp == false){
-            System.out.println("no flip");
-            lift.reverseWinch(.5);
-        }
-
-        if(holdUp == true){
-            System.out.println("flip");
-            lift.reverseWinch(0);
-            lift.holdV2();
-
-        }
-
-
-
-
-        
-        //if(hatchpanel.getRotator() != 0){
-          //  holdUp = true;
-        //}
-
-        //if((OI.xbox.rt.get()) || (OI.xbox.lt.get())){
-        //    holdUp = true;
-        //}
-
-        //if(OI.xbox.y.get() || (OI.leftTrigger.get()) || (OI.rightTrigger.get()) || (OI.xbox.dPad.up.get())){
-         //   holdUp = false;
-       // }
-
-        //if((lift.getWinch() != 0) || (lift.getReverseWinch() != 0)){
-          //  holdUp = false;
-        //}
-
-        //if(holdUp){
-    //        System.out.println("holdup is true :D");
-      //      lift.reverseWinch(.5);
-        //}
-        //else if((holdUp == false)){
-           // System.out.println("holdup is false :O");
-           // lift.reverseWinch(0);
-           // lift.holdV2();
-        //}
-
-
-
-
-
-
-
-
-        //lift.holdV2();
-        //lift.turnOff();
-        //lift.reverseWinch(.5);
-
-
-
-        //if((lift.getWinch() == 1) || (lift.getWinch() == 0.5) || (lift.getWinch() == -.5)){
-
-        //}
-
-        //if(OI.xbox.y.get() || OI.xbox.dPad.up.get() || OI.xbox.x.get()){
-            //lift.holdV2();
-            //lift.turnOffReverse();
-            //lift.reverseWinch(-0.25);
-        //}
-        //0.25 can hold it.
-
-
-
-
+        lift.reverseWinch(speed1);
 
     }
 

@@ -29,6 +29,8 @@ public class Lift extends Subsystem {
         return winch.get();
     }
 
+    //public double getReverseWinch(){return winch2.get();}
+
     public void setWinch(double num1){
         winch.set(num1);
     }

@@ -7,11 +7,13 @@ import frc.robot.subsystems.Lift;
 public class TestReverseWinch extends Command {
     Lift lift = Lift.getInstance();
     double speed1;
+    double speed2;
 
 
-    public TestReverseWinch(double spd1) {
+    public TestReverseWinch(double spd1, double spd2) {
         requires(lift);
         speed1 = spd1;
+        speed2 = spd2;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -35,6 +37,7 @@ public class TestReverseWinch extends Command {
     @Override
     protected void execute() {
         lift.reverseWinch(speed1);
+        lift.setWinch(speed2);
 
     }
 

@@ -41,7 +41,7 @@ public class DefaultWinch extends Command {
 
         if(holdUp == false){
             System.out.println("no flip");
-            lift.reverseWinch(.5);
+            //lift.reverseWinch(.5);
         }
 
         if(holdUp == true){

@@ -67,18 +67,26 @@ public class OI {
       //rotate arm down
       OI.xbox.lt.whileHeld(new RotateHP(0.68));
       OI.xbox.y.whileHeld(new Winch(1));
+      //Winch Up Full Power
       OI.xbox.dPad.right.whileHeld(new Winch(0.5));
-      OI.xbox.x.whileHeld(new Winch(-1));
-      OI.leftTrigger.whileHeld(new TestReverseWinch(0));
+      //Winch Up Semi Power
+      //OI.xbox.x.whileHeld(new Winch(-1));
+      OI.xbox.x.whileHeld(new TestReverseWinch(.5,-1));
+      OI.leftTrigger.whileHeld(new TestReverseWinch(0,0));
       //Use reverse winch for game only
-      //Unwind rever//se winch for flip
+      //Unwind reverse winch for flip
       //Use only winch for flip
-      OI.rightTrigger.whileHeld(new TestReverseWinch(-.5));
-      OI.xbox.dPad.up.whenPressed(new Flip(-0.75));
+      OI.rightTrigger.whileHeld(new TestReverseWinch(-.5,0));
+      //Unspools all rope completely
+      OI.xbox.dPad.up.whileHeld(new Flip(-0.75));
+      //Flip forward direction
       OI.xbox.dPad.down.whenPressed(new Flip(0.05));
-      //OI.xbox.dPad.up.whileHeld(new FinalFlip());
+      //Flip opposite direction
+      
       OI.xbox.a.whenPressed(new PushHP());
+      //push out pneumatics
       OI.xbox.b.whenPressed(new ResetHP());
+      //reset pneumatics
   }
 
   

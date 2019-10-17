@@ -11,8 +11,8 @@ package frc.robot;
 
 //main
 import edu.wpi.first.cameraserver.CameraServer;
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.CvSource;
+//import edu.wpi.cscore.CvSink;
+//import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.UsbCamera;
 //import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
@@ -25,7 +25,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
-import org.opencv.core.Mat;
+//import org.opencv.core.Mat;
 //import frc.robot.subsystems.ExampleSubsystem;
 //Loop on and off for lift thing
 
@@ -74,19 +74,22 @@ public class Robot extends TimedRobot {
     //cameraserver for live roborio, if you want to lower resolution it's better to use the format below (resize)
     //CameraServer.getInstance().startAutomaticCapture();
     UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-    camera.setResolution(320,240);
-    camera.setFPS(20);
+    camera.setResolution(160,120);
+    camera.setFPS(30);
+    camera.setBrightness(50);
+    
+    
   
     //camera.setResolution(640, 480);
     
     
     // thread format for vision roborio-connected camera, as needed.
 
-    new Thread(() -> {
-                UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
-                camera1.setResolution(320, 240);
-                camera1.setFPS(20);
-    }).start();
+    //new Thread(() -> {
+                //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
+                //camera1.setResolution(320, 240);
+                //camera1.setFPS(20);
+    //}).start();
                 
                 //CvSink cvSink = CameraServer.getInstance().getVideo();
                 //
